@@ -2,6 +2,23 @@
 
 <form [formGroup]="progressNotesForm">
 
+  <!-- Project Code -->
+  <div>
+    <label for="project-code">Project Code:</label>
+    <input
+      id="project-code"
+      type="text"
+      formControlName="projectCode"
+      (blur)="onProjectCodeBlur()">
+
+    @if (invalidProjectCode) {
+      <p style="color: red;">
+        Project code not found.
+      </p>
+    }
+  </div>
+
+  <!-- Project Name -->
   <div>
     <label for="project-name">Project Name:</label>
     <input
@@ -10,6 +27,7 @@
       formControlName="projectName">
   </div>
 
+  <!-- Date -->
   <div>
     <label for="date">Date:</label>
     <input
@@ -18,6 +36,7 @@
       formControlName="date">
   </div>
 
+  <!-- Current Status -->
   <div>
     <label for="current-status">Current Status:</label>
     <select
@@ -30,6 +49,7 @@
     </select>
   </div>
 
+  <!-- Team Member -->
   <div>
     <label for="team-member">Team Member:</label>
     <input
@@ -38,6 +58,7 @@
       formControlName="teamMember">
   </div>
 
+  <!-- Progress Note -->
   <div>
     <label for="progress-note">Progress Note:</label>
     <textarea
